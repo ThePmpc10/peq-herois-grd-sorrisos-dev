@@ -1,0 +1,217 @@
+/* Animação de "pulse" */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2); /* Aumenta o ícone */
+    }
+}
+
+/* Classe de animação para o alerta */
+.chatbot-alert {
+    animation: pulse 0.7s ease-in-out infinite;
+}
+
+
+/* Estilos do Ícone do Chatbot */
+.chatbot-container .chatbot-icon {
+    position: fixed;
+    bottom: -10px;
+    right: 18px;
+    cursor: pointer;
+    font-size: 40px; /* Tamanho do ícone */
+    z-index: 999;          /* Garante que o ícone fique acima do conteúdo */
+}
+
+/* Estilos específicos do ícone */
+.chatbot-container .chatbot-icon .material-symbols-outlined {
+    font-size: 55px; /* Tamanho do ícone */
+    color: #f7ca44; /* Cor de preenchimento amarelo */
+    text-shadow: -1px -1px 0 #f7ca44, 1px -1px 0 #f7ca44, -1px 1px 0 #f7ca44, 1px 1px 0 #f7ca44; /* Contorno preto */
+}
+
+/* Efeito ao passar o mouse */
+.chatbot-container .chatbot-icon:hover .material-symbols-outlined {
+    transform: scale(1.1); /* Aumenta ligeiramente ao passar o mouse */
+    color: #f7ca44; /* Alteração leve de cor ao passar o mouse */
+}
+
+/* Estilos da Janela do Chatbot */
+.chatbot-container .chatbot-window {
+    display: none; /* Inicialmente escondido */
+    position: fixed;
+    bottom: 14px;
+    right: 14px;
+    width: 320px;
+    max-height: 450px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Botão de Fechar */
+.chatbot-container .close-btn {
+    font-size: 24px;
+    color: white;
+    position: absolute;
+    top: -5px; /* Ajusta a distância do topo */
+    right: 6px; /* Ajusta a distância da borda direita */
+    cursor: pointer;
+}
+
+.chatbot-container .close-btn:hover {
+    color: black;
+}
+
+/* Cabeçalho do Chat */
+.chatbot-container .chat-header {
+    background-color: #f7ca44;
+    color: white;
+    padding: 12px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    position: relative; /* Permite que a cruz seja posicionada no topo direito */
+}
+
+/* Área de Mensagens */
+.chatbot-container .chat-messages {
+    padding: 10px;
+    height: 300px;
+    overflow-y: auto;
+    background: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Estilos das Mensagens */
+.chatbot-container .message {
+    position: relative;
+    max-width: 80%;
+    padding: 8px 15px;
+    padding-bottom: 18px; /* Espaço extra para o horário */
+    border-radius: 15px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.chatbot-container .user-message {
+    align-self: flex-end;
+    background-color: #f7ca44;
+    color: white;
+    border-top-right-radius: 0;
+}
+
+.chatbot-container .bot-message {
+    align-self: flex-start;
+    background-color: #f1f1f1;
+    color: #333;
+    border-top-left-radius: 0;
+}
+
+/* Estilo para a Hora da Mensagem */
+.chatbot-container .message-time {
+    font-size: 10px;
+    color: #888;
+    position: absolute;
+    bottom: 4px;
+    right: 8px;
+    white-space: nowrap;
+}
+
+/* Estilos do Rodapé do Chat (chat-footer) */
+.chatbot-container .chat-footer {
+    display: flex;
+    align-items: center; /* Alinha verticalmente o conteúdo */
+    justify-content: space-between; /* Espaça entre o input e o ícone */
+    border-top: 1px solid #ddd;
+    padding: 5px 10px; /* Adiciona um pouco de espaçamento */
+}
+
+/* Estilos do Input */
+.chatbot-container .chat-footer input {
+    flex: 1; /* O input ocupa o máximo de espaço disponível */
+    padding: 12px;
+    border: none;
+    font-size: 14px;
+    outline: none;
+}
+
+/* Estilo do Ícone de Enviar (Centro ao lado do input) */
+.chatbot-container .chat-footer i.material-icons {
+    font-size: 30px; /* Tamanho do ícone */
+    color: #f7ca44; /* Cor do ícone */
+    cursor: pointer; /* Mostrar como um botão clicável */
+    transition: transform 0.3s, color 0.3s;
+    margin-left: 10px; /* Espaço entre o input e o ícone */
+}
+
+.chatbot-container .chat-footer i.material-icons:hover {
+    transform: scale(1.1); /* Aumenta o ícone ao passar o mouse */
+    color: #f1c03e; /* Cor ligeiramente mais clara ao passar o mouse */
+}
+
+.status-indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #4caf50; /* Verde para mostrar "online" */
+    border-radius: 50%;
+    margin-left: 5px; /* Espaço entre o nome e a bolinha */
+}
+
+/* Barra de rolagem estilizada para navegadores baseados em WebKit */
+.chatbot-container .chat-messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chatbot-container .chat-messages::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.chatbot-container .chat-messages::-webkit-scrollbar-thumb {
+    background-color: #f7ca44;
+    border-radius: 10px;
+    border: 2px solid #f1f1f1;
+}
+
+.chatbot-container .chat-messages::-webkit-scrollbar-thumb:hover {
+    background-color: #e0b63e;
+}
+
+/* Ocultar os botões superior e inferior da barra de rolagem */
+.chatbot-container .chat-messages::-webkit-scrollbar-button:vertical:increment,
+.chatbot-container .chat-messages::-webkit-scrollbar-button:vertical:decrement {
+    display: none;
+    height: 0;
+    width: 0;
+    background: transparent;
+    color: transparent;
+}
+
+/* Firefox: largura da barra e cores */
+.chatbot-container .chat-messages {
+    scrollbar-width: thin;
+    scrollbar-color: #f7ca44 #f1f1f1;
+}
+
+/* Adiciona regras para dispositivos móveis */
+@media (max-width: 480px) {
+    .chatbot-container .chatbot-window {
+        width: 280px; /* Reduz a largura do chat */
+        bottom: 20px; /* Ajusta a distância do botão inferior */
+        right: 13px;
+    }
+
+    .chatbot-container .chatbot-icon {
+        right: 10px; /* Ajusta a posição do ícone no mobile */
+        font-size: 35px; /* Diminui o tamanho do ícone */
+    }
+}
