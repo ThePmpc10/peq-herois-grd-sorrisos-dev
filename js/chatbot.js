@@ -24,7 +24,7 @@ async function sendMessage() {
     const botMessage = document.createElement("div");
     botMessage.className = "message bot-message";
     botMessage.innerHTML = `
-        <span>Processando...</span>
+        <span>A escrever...</span>
         <span class="message-time">${getCurrentTime()}</span>
     `;
     chatMessages.appendChild(botMessage);
