@@ -30,7 +30,7 @@ async function sendMessage() {
     chatMessages.appendChild(botMessage);
 
     try {
-        const response = await fetch("http://localhost:3000/chat", {
+        const response = await fetch("peq-herois-grd-sorrisos-back-end-dev.up.railway.app/chat", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
