@@ -26,12 +26,20 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
 
+    <script>
+      // Verifica se o usuário está autenticado na sessão
+      if (!sessionStorage.getItem('isAuthenticated')) {
+        // Se não estiver autenticado, redireciona para a tela de login
+        window.location.href = 'login.html';
+      }
+    </script>
+
   </head>
   <body>
     
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
       <div class="container">
-        <a class="navbar-brand" href="./">
+        <a class="navbar-brand" href="/index1">
           <img src="images/logo.png" alt="logo" style="height: 35%; width: 35%;">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,7 +48,7 @@
   
         <div class="collapse navbar-collapse" id="ftco-nav">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a href="./" class="nav-link">Página Inicial</a></li>
+            <li class="nav-item"><a href="/index1" class="nav-link">Página Inicial</a></li>
             <li class="nav-item"><a href="/donate" class="nav-link">Doações</a></li>
             <li class="nav-item active"><a href="/gallery" class="nav-link">Galeria</a></li>
             <li class="nav-item"><a href="/about" class="nav-link">Quem somos?</a></li>
@@ -280,6 +288,7 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
-    
+
+
   </body>
 </html>

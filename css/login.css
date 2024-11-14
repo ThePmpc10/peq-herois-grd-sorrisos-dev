@@ -1,0 +1,70 @@
+/* Estilo geral para o corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+/* Estilo do container do login */
+.login-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* Caixa de login */
+.login-box {
+    width: 300px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Logo do login */
+.login-logo {
+    width: 140px;
+    height: 140px;
+    margin-bottom: 5px;
+}
+
+/* Estilos para os inputs */
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Estilo do botão de login */
+.login-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #f7ca44;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Estilos de mensagem de erro */
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 15px;
+}
